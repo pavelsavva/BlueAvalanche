@@ -94,3 +94,161 @@ Optional:
 
 ### [BONUS] Interactive Prototype
 ![](https://i.imgur.com/r2jeZAF.gif)
+
+## Schema 
+
+### Models
+**User**
+
+| Property | Type | Description |
+| -------- | -------- | -------- |
+| objectId     | String     | unique id for the user (default field)     |
+| email | String | user's email address | 
+| emailVerified | Boolean | has user's email address been verified |
+
+**Post**
+
+| Property | Type | Description |
+| -------- | -------- | -------- |
+| objectId | String | unique id for the user (default field) |
+| author | Pointer to User | post author |
+| image | File | image attached to the post |
+| video | File | video attached to the post |
+| content | String | text content of the post |
+| createdAt | DateTime | timestamp when the post was created |
+| scheduledPostingTime | DateTime | timestamp when the post was or will be posted |
+| socialMedia | Array<Pointer to SocialMediaOutlet> | array of social media the post was or will be posted to
+
+**SocialMediaOutlet**
+
+| Property | Type | Description |
+| -------- | -------- | -------- |
+| objectId | String | unique id for the user (default field) |
+| user | Pointer to User | social media outlet user |
+| type | Array<String> | type of social media outlet (Twitter, Facebook, etc) | 
+| authToken | String | authorization token provided by the social media | 
+| tokenExpirationDate | DateTime | timestamp when the token expires | 
+| targetUrl | String | url that the post can be submitted through |
+
+### Networking
+#### List of network requests by screen
+   - Login/ Sign Up screen
+      - (Create/POST) Create a new user
+      ```swift
+      @IBAction func onSignUp(_ sender: Any) {
+            let user = PFUser()
+            user.email = emailField.text
+            user.password = passwordField.text
+            user.signUpInBackground { (success, error) in
+                if success {
+                    self.performSegue(withIdentifier: "loginSegue", sender: nil)
+                } else {
+                    print("Error: \(error?.localizedDescription)")
+                }
+            }
+        }
+      ```
+      - (Read/POST) Log in existing user
+      ```swift
+      @IBAction func onSignIn(_ sender: Any) {
+            let emaill = emailField.text!
+            let password = passwordField.text!
+
+            PFUser.logInWithUsername(inBackground: username, password: password) {
+                (user, error) in
+                if user != nil {
+                    self.performSegue(withIdentifier: "loginSegue", sender: nil)
+                } else {
+                    print("Error: \(error?.localizedDescription)")
+                }
+            }
+        }
+      ```
+   - Connect Social Media Screen
+      - (Read/GET) Get all social media outlet objects created by the user
+      ```swift
+         let query = PFQuery(className:"SocialMediaOutlet")
+         query.whereKey("user", equalTo: currentUser)
+         query.findObjectsInBackground { (outlets: [PFObject]?, error: Error?) in
+            if let error = error { 
+               print(error.localizedDescription)
+            } else if let posts = posts {
+               print("Successfully retrieved \(outlets.count) outlets.")
+           // TODO: Do something with outlets...
+            }
+         }
+     ```
+      - (Create/POST) Create a new social media outlet object
+      ```swift
+      @IBAction func onNewSocialMediaOutlet(_ sender: Any, token: String, tokenExpirationDate: Date, type: String, url: String) {
+        let post = PFObject(className: "SocialMediaOutlet")
+        
+        post["user"] = PFUser.current()
+        post["type"] = type
+        post["url"] = url
+        post["authToken"] = token
+        post["tokenExpirationDate"] = tokenExpirationDate
+        
+        post.saveInBackground { (success, error) in
+                if success {
+                    self.dismiss(animated: true, completion: nil)
+                    print("saved!")
+                }  else {
+                    print("error!")
+                }
+            }
+        }
+      ```
+   - New Post Screen
+      - (Create/POST) Create new post
+      ```swift
+      @IBAction func onSubmitButton(_ sender: Any) {
+        let post = PFObject(className: "Post")
+        
+        post["content"] = commentField.text!
+        post["author"] = PFUser.current()
+        post["scheduledPostingTime"] = scheduledPostingTimeField.date!
+        post["socialMedia"] = self.socialMedia
+        
+        let imageData = imageView.image!.pngData()
+        if imageData {
+            let file = PFFileObject(name: "image.png", data: imageData!)
+            post["image"] = file
+        }
+        
+        let videoData = videoView.video!.mp4Data()
+        if videoData {
+            let file = PFFileObject(name: "video.mp4", data: videoData!)
+            post["video"] = file
+        }
+        
+        post.saveInBackground { (success, error) in
+                if success {
+                    self.dismiss(animated: true, completion: nil)
+                    print("saved!")
+                }  else {
+                    print("error!")
+                }
+            }
+        }
+      ```
+   - Statistics Screen
+       - (Read/GET) Query all posts where user is author
+         ```swift
+         let query = PFQuery(className:"Post")
+         query.whereKey("author", equalTo: currentUser)
+         query.order(byDescending: "createdAt")
+         query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) in
+            if let error = error { 
+               print(error.localizedDescription)
+            } else if let posts = posts {
+               print("Successfully retrieved \(posts.count) posts.")
+           // TODO: Do something with posts...
+            }
+         }
+         ```
+   - Settings Screen
+      - (Update/PUT) Reset password
+      ```swift
+        PFUser.requestPasswordResetForEmailInBackground(currentUser.email!)
+      ```
