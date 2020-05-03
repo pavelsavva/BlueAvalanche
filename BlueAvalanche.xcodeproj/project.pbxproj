@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2605DE0582B954D9ECE4E27E /* Pods_BlueAvalanche.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F450D4F54FFFA1A71EE9E5CF /* Pods_BlueAvalanche.framework */; };
 		7061395B245BBE71009F4744 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7061395A245BBE71009F4744 /* AppDelegate.swift */; };
 		7061395D245BBE71009F4744 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7061395C245BBE71009F4744 /* SceneDelegate.swift */; };
 		7061395F245BBE71009F4744 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7061395E245BBE71009F4744 /* ContentView.swift */; };
@@ -24,6 +25,9 @@
 		70613963245BBE75009F4744 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		70613966245BBE75009F4744 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		70613968245BBE75009F4744 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F450D4F54FFFA1A71EE9E5CF /* Pods_BlueAvalanche.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlueAvalanche.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F51436DB7CD8D3E7A954938E /* Pods-BlueAvalanche.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueAvalanche.debug.xcconfig"; path = "Target Support Files/Pods-BlueAvalanche/Pods-BlueAvalanche.debug.xcconfig"; sourceTree = "<group>"; };
+		F617A741876CF8A0B7C707B1 /* Pods-BlueAvalanche.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueAvalanche.release.xcconfig"; path = "Target Support Files/Pods-BlueAvalanche/Pods-BlueAvalanche.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2605DE0582B954D9ECE4E27E /* Pods_BlueAvalanche.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				70613959245BBE71009F4744 /* BlueAvalanche */,
 				70613958245BBE71009F4744 /* Products */,
+				9D356F86601E034AA7B048C4 /* Pods */,
+				72E0255ACC7CF5DE2A2F6258 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,6 +82,24 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		72E0255ACC7CF5DE2A2F6258 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F450D4F54FFFA1A71EE9E5CF /* Pods_BlueAvalanche.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9D356F86601E034AA7B048C4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F51436DB7CD8D3E7A954938E /* Pods-BlueAvalanche.debug.xcconfig */,
+				F617A741876CF8A0B7C707B1 /* Pods-BlueAvalanche.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -82,9 +107,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7061396B245BBE75009F4744 /* Build configuration list for PBXNativeTarget "BlueAvalanche" */;
 			buildPhases = (
+				E3A32226439A171412805D86 /* [CP] Check Pods Manifest.lock */,
 				70613953245BBE71009F4744 /* Sources */,
 				70613954245BBE71009F4744 /* Frameworks */,
 				70613955245BBE71009F4744 /* Resources */,
+				7E92D7BBBCB782158074C76D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -140,6 +167,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7E92D7BBBCB782158074C76D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BlueAvalanche/Pods-BlueAvalanche-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BlueAvalanche/Pods-BlueAvalanche-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BlueAvalanche/Pods-BlueAvalanche-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3A32226439A171412805D86 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BlueAvalanche-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		70613953245BBE71009F4744 /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		7061396C245BBE75009F4744 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F51436DB7CD8D3E7A954938E /* Pods-BlueAvalanche.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -301,6 +371,7 @@
 		};
 		7061396D245BBE75009F4744 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F617A741876CF8A0B7C707B1 /* Pods-BlueAvalanche.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
