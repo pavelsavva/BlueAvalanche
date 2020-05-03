@@ -37,11 +37,15 @@ Create once - influence everyone. Blue Avalanche - we got you covered.
 
 ### 1. User Stories (Required and Optional)
 
+### App Walkthrough GIF
+
+<img src="https://s6.gifyu.com/images/ezgif.com-video-to-gif7f1a95ffe0360e41.gif" width=250><br>
+
 **Required Must-have Stories**
 
-- [ ] User sees app icon in home screen and styled launch screen.
-- [ ] User can sign up to create a new account.
-- [ ] User can login into the main app.
+- [x] User sees app icon in home screen and styled launch screen.
+- [x] User can sign up to create a new account.
+- [x] User can login into the main app.
 - [ ] User can connect their social media accounts. 
 - [ ] User can compose a post across all of the social media (Twitter, Instagram, LinkedIn, and Facebook).
 - [ ] User stays logged in across restarts.
