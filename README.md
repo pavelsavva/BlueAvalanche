@@ -39,21 +39,21 @@ Create once - influence everyone. Blue Avalanche - we got you covered.
 
 **Required Must-have Stories**
 
-* User sees app icon in home screen and styled launch screen.
-* User can sign up to create a new account.
-* User can login into the main app.
-* User can connect their social media accounts. 
-* User can compose a post across all of the social media (Twitter, Instagram, LinkedIn, and Facebook).
-* User stays logged in across restarts.
-* User can logout the main app.
-* User can disconnect their social media accounts.
-* User can rely on the application automatically posting their message across all the connected social media. 
+- [ ] User sees app icon in home screen and styled launch screen.
+- [ ] User can sign up to create a new account.
+- [ ] User can login into the main app.
+- [ ] User can connect their social media accounts. 
+- [ ] User can compose a post across all of the social media (Twitter, Instagram, LinkedIn, and Facebook).
+- [ ] User stays logged in across restarts.
+- [ ] User can logout the main app.
+- [ ] User can disconnect their social media accounts.
+- [ ] User can rely on the application automatically posting their message across all the connected social media. 
 
 **Optional Nice-to-have Stories**
 
-* User can view the app on various device size and orientations.
-* User can run the app on a real device.
-* User can schedule new posts and view old posts via calendar.
+- [ ] User can view the app on various device size and orientations.
+- [ ] User can run the app on a real device.
+- [ ] User can schedule new posts and view old posts via calendar.
 
 ### 2. Screen Archetypes
 
