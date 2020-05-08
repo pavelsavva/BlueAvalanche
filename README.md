@@ -38,8 +38,9 @@ Create once - influence everyone. Blue Avalanche - we got you covered.
 ### 1. User Stories (Required and Optional)
 
 ### App Walkthrough GIF
-
 <img src="https://s6.gifyu.com/images/ezgif.com-video-to-gif7f1a95ffe0360e41.gif" width=250><br>
+
+<img src="https://s6.gifyu.com/images/ezgif.com-resize-1759d21431fa4c37e.gif" width=250><br>
 
 **Required Must-have Stories**
 
