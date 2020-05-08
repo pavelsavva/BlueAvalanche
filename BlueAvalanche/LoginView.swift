@@ -34,10 +34,11 @@ struct LoginView: View {
     @State private var password: String  = ""
     
     @EnvironmentObject var env : MyAppEnvironmentData
-    
+    @EnvironmentObject var twitter: TwitterService
+
     var body: some View {
         
-        let navlink = NavigationLink(destination: MainPage(),
+        let navlink = NavigationLink(destination: SocialMediaConnectView().environmentObject(twitter),
                                      tag: .Login,
                                      selection: $env.currentPage,
                                      label: { EmptyView() })
@@ -101,26 +102,47 @@ struct LoginView: View {
                 
             }.padding()
             
-        }.padding()
+        }.padding().sheet(isPresented: self.$twitter.showSheet) {
+          SafariView(url: self.$twitter.authUrl)
+        }
     }
 }
 
-struct MainPage: View {
+struct SocialMediaConnectView: View {
     
+    @EnvironmentObject var twitter: TwitterService
     @EnvironmentObject var env : MyAppEnvironmentData
     
     var body: some View {
         VStack {
-            Text("Logged In").font(.largeTitle).padding()
             
-        }.navigationBarBackButtonHidden(true)
+            Button(action: { self.twitter.authorize() }) {
+                HStack {
+                    Image(systemName: "plus.square")
+                        .font(.title)
+                    Text("Connect Twitter")
+                        .fontWeight(.semibold)
+                }
+                .frame(minWidth: 0, maxWidth: .infinity)
+                .padding()
+                .overlay(
+                    RoundedRectangle(cornerRadius: 16)
+                        .stroke(Color.blue, lineWidth: 2)
+                )
+                .padding(.horizontal, 20)
+            }
+            Text(twitter.credential?.userId ?? "")
+            Text(twitter.credential?.screenName ?? "")
+            
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         //        ContentView().environmentObject(MyAppEnvironmentData())
-        MainPage().environmentObject(MyAppEnvironmentData())
+        SocialMediaConnectView().environmentObject(MyAppEnvironmentData())
+        .environmentObject(TwitterService())
         
     }
 }

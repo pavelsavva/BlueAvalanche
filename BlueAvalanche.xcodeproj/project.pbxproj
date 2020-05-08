@@ -3,24 +3,28 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2605DE0582B954D9ECE4E27E /* Pods_BlueAvalanche.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F450D4F54FFFA1A71EE9E5CF /* Pods_BlueAvalanche.framework */; };
+		704ACFBE24650CD700FD538D /* TwitterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704ACFBD24650CD700FD538D /* TwitterService.swift */; };
+		704ACFC024650E2100FD538D /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704ACFBF24650E2100FD538D /* SafariView.swift */; };
 		7061395B245BBE71009F4744 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7061395A245BBE71009F4744 /* AppDelegate.swift */; };
 		7061395D245BBE71009F4744 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7061395C245BBE71009F4744 /* SceneDelegate.swift */; };
-		7061395F245BBE71009F4744 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7061395E245BBE71009F4744 /* ContentView.swift */; };
+		7061395F245BBE71009F4744 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7061395E245BBE71009F4744 /* LoginView.swift */; };
 		70613961245BBE75009F4744 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70613960245BBE75009F4744 /* Assets.xcassets */; };
 		70613964245BBE75009F4744 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70613963245BBE75009F4744 /* Preview Assets.xcassets */; };
 		70613967245BBE75009F4744 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70613965245BBE75009F4744 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		704ACFBD24650CD700FD538D /* TwitterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterService.swift; sourceTree = "<group>"; };
+		704ACFBF24650E2100FD538D /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		70613957245BBE71009F4744 /* BlueAvalanche.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlueAvalanche.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7061395A245BBE71009F4744 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7061395C245BBE71009F4744 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7061395E245BBE71009F4744 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7061395E245BBE71009F4744 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		70613960245BBE75009F4744 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		70613963245BBE75009F4744 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		70613966245BBE75009F4744 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -65,11 +69,13 @@
 			children = (
 				7061395A245BBE71009F4744 /* AppDelegate.swift */,
 				7061395C245BBE71009F4744 /* SceneDelegate.swift */,
-				7061395E245BBE71009F4744 /* ContentView.swift */,
+				7061395E245BBE71009F4744 /* LoginView.swift */,
 				70613960245BBE75009F4744 /* Assets.xcassets */,
 				70613965245BBE75009F4744 /* LaunchScreen.storyboard */,
 				70613968245BBE75009F4744 /* Info.plist */,
 				70613962245BBE75009F4744 /* Preview Content */,
+				704ACFBD24650CD700FD538D /* TwitterService.swift */,
+				704ACFBF24650E2100FD538D /* SafariView.swift */,
 			);
 			path = BlueAvalanche;
 			sourceTree = "<group>";
@@ -96,7 +102,6 @@
 				F51436DB7CD8D3E7A954938E /* Pods-BlueAvalanche.debug.xcconfig */,
 				F617A741876CF8A0B7C707B1 /* Pods-BlueAvalanche.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -216,8 +221,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7061395B245BBE71009F4744 /* AppDelegate.swift in Sources */,
+				704ACFBE24650CD700FD538D /* TwitterService.swift in Sources */,
 				7061395D245BBE71009F4744 /* SceneDelegate.swift in Sources */,
-				7061395F245BBE71009F4744 /* ContentView.swift in Sources */,
+				7061395F245BBE71009F4744 /* LoginView.swift in Sources */,
+				704ACFC024650E2100FD538D /* SafariView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
